@@ -16,6 +16,10 @@ class MarketDataResult:
 
 
 REQUIRED_COLUMNS = ["Open", "High", "Low", "Close", "Volume"]
+MIN_EXPECTED_PRICE_BY_SYMBOL = {
+    "FDAX.EX": 1000.0,
+    "^GDAXI": 1000.0,
+}
 
 
 def _normalize_columns(df: pd.DataFrame) -> pd.DataFrame:
@@ -39,6 +43,12 @@ def fetch_market_data(config: DashboardConfig) -> MarketDataResult:
             if missing:
                 raise ValueError(f"Missing columns for {symbol}: {missing}")
             df = df[REQUIRED_COLUMNS].copy()
+            median_close = float(df["Close"].median())
+            min_expected = MIN_EXPECTED_PRICE_BY_SYMBOL.get(symbol, 0.0)
+            if median_close < min_expected:
+                raise ValueError(
+                    f"Symbol {symbol} returned implausible price scale for FDAX/DAX use: median close {median_close:.2f}"
+                )
             df.index = pd.to_datetime(df.index, utc=True).tz_convert(config.tzinfo)
             return MarketDataResult(symbol=symbol, frame=df)
         except Exception as exc:  # pragma: no cover - network path

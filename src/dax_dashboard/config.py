@@ -5,7 +5,7 @@ from zoneinfo import ZoneInfo
 @dataclass(frozen=True)
 class DashboardConfig:
     symbol: str = "FDAX.EX"
-    fallback_symbols: tuple[str, ...] = ("DAX", "^GDAXI")
+    fallback_symbols: tuple[str, ...] = ("^GDAXI",)
     interval: str = "5m"
     period: str = "60d"
     timezone: str = "Europe/Berlin"

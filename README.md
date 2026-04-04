@@ -6,7 +6,7 @@ Prototype dashboard for DAX/FDAX decision support.
 
 - Automatic market data pull via Yahoo Finance
 - Primary symbol: `FDAX.EX`
-- Fallback symbol(s): `DAX`, `^GDAXI`
+- Fallback symbol(s): `^GDAXI`
 - 5-minute dashboard
 - Current day/week/month return stretch
 - Current max drawdown by day/week/month
