@@ -20,6 +20,11 @@ Expand `publisuites-portugal/leads.csv` with Portuguese content-publishing websi
 - Skip bot-protected or inaccessible pages instead of fighting anti-bot systems.
 - Update `notes.md` if methodology changes or bottlenecks appear.
 
+## Discovery method
+- Use `brave_search.py` in this folder for candidate discovery when useful.
+- Prefer broader Portuguese-language discovery queries and then filter candidates by relevance, country, category, and publisher quality.
+- Do not rely on Google Custom Search.
+
 ## Per-run target
 At the start of each run:
 1. Read the existing CSV and count current leads (excluding header).
