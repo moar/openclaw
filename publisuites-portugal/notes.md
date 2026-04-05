@@ -12,3 +12,4 @@
 - Discovery must be duplicate-aware: compare normalized URLs against existing `leads.csv` before appending.
 - Treat rows with `unknown` contact_method as candidates for later manual cleanup.
 - Separate cleanup passes may be used to improve existing rows, but they must not remove good rows or overwrite the CSV.
+- Batch runs should target 50 new pages per run unless blocked; small batches are only acceptable when the task explicitly reports the shortfall and cause.

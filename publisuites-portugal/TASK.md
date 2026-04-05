@@ -38,9 +38,10 @@ Append verified Portuguese content-publishing websites to `publisuites-portugal/
 ## Per-run target
 At the start of each run:
 1. Read the existing CSV and count current leads (excluding header).
-2. Append **up to 50 new clean leads**.
-3. If fewer than 50 high-quality new leads can be found, stop early and explain why.
-4. **Do not** change or remove any existing rows.
+2. Aim to append **50 new clean leads**.
+3. Continue searching and appending until 50 new leads are added, or until a hard blocker / timeout prevents further high-quality additions.
+4. If fewer than 50 new leads can be found in that run, stop and explain the shortfall clearly.
+5. **Do not** change or remove any existing rows.
 
 ## Required columns
 - `web_url`
