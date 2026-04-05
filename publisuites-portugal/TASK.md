@@ -14,7 +14,9 @@ Append verified Portuguese content-publishing websites to `publisuites-portugal/
 
 ## Non-negotiable rules
 - **Append-only:** never truncate, overwrite, replace, or rebuild `leads.csv`.
-- **Preserve existing rows exactly:** every existing row must remain unless it is a literal duplicate of the exact same `web_url`.
+- **Preserve existing rows exactly:** every existing row must remain.
+- **No duplicate websites:** do not add any website already present in `leads.csv`.
+- **Normalize for duplicate checks:** compare URLs after normalizing scheme, trailing slash, and obvious `www.` variants so near-duplicates are skipped too.
 - **No speculative rows:** only add a row when the site is a real Portuguese content publisher and the category is justified.
 - **Source-backed contacts only:**
   - `contact_email` may be filled only when an official site/about/contact/ficha técnica/commercial page clearly exposes the email.
@@ -30,6 +32,7 @@ Append verified Portuguese content-publishing websites to `publisuites-portugal/
 ## Discovery method
 - Use `brave_search.py` in this folder for candidate discovery when useful.
 - Prefer broader Portuguese-language discovery queries and then filter candidates by relevance, country, category, and publisher quality.
+- Before appending any candidate, compare against the existing CSV and skip anything already present.
 - Do not rely on Google Custom Search.
 
 ## Per-run target
