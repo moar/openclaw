@@ -18,6 +18,7 @@ Append verified Portuguese content-publishing websites to `publisuites-portugal/
 - **No duplicate websites:** do not add any website already present in `leads.csv`.
 - **Normalize for duplicate checks:** compare URLs after normalizing scheme, trailing slash, and obvious `www.` variants so near-duplicates are skipped too.
 - **No speculative rows:** only add a row when the site is a real Portuguese content publisher and the category is justified.
+- **Publisher preference:** prioritize mid-sized, independently operated, and regional Portuguese publishers. Use large national media brands only as fallback if needed to complete the batch target.
 - **Source-backed contacts only:**
   - `contact_email` may be filled only when an official site/about/contact/ficha técnica/commercial page clearly exposes the email.
   - `has_email` may be `yes` only if a real email was found and recorded.
