@@ -16,6 +16,7 @@ Append verified Portuguese content-publishing websites to `publisuites-portugal/
 - **Append-only:** never truncate, overwrite, replace, or rebuild `leads.csv`.
 - **Preserve existing rows exactly:** every existing row must remain.
 - **No duplicate websites:** do not add any website already present in `leads.csv`.
+- **Domain-level uniqueness:** skip any candidate whose normalized root domain already exists in `leads.csv`, even if the URL path differs.
 - **Normalize for duplicate checks:** compare URLs after normalizing scheme, trailing slash, and obvious `www.` variants so near-duplicates are skipped too.
 - **No speculative rows:** only add a row when the site is a real Portuguese content publisher and the category is justified.
 - **Publisher preference:** prioritize mid-sized, independently operated, and regional Portuguese publishers. Use large national media brands only as fallback if needed to complete the batch target.
