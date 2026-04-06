@@ -1,7 +1,3 @@
-# HEARTBEAT.md Template
-
-```markdown
 # Keep this file empty (or with only comments) to skip heartbeat API calls.
 
-# Add tasks below when you want the agent to check something periodically.
-```
+# Heartbeat runs should use gpt-5.4-nano.
