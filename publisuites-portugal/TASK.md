@@ -34,6 +34,8 @@ Append verified Portuguese content-publishing websites to `publisuites-portugal/
 ## Discovery method
 - Use `brave_search.py` in this folder for candidate discovery when useful.
 - Prefer broader Portuguese-language discovery queries and then filter candidates by relevance, country, category, and publisher quality.
+- Vary queries by vertical, region, and publisher type so the run does not keep re-hitting the same obvious top results.
+- Keep a simple internal seen-domain / seen-query memory during the run when useful, and skip already-processed domains quickly.
 - Before appending any candidate, compare against the existing CSV and skip anything already present.
 - Do not rely on Google Custom Search.
 
